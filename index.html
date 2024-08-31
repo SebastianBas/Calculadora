@@ -71,10 +71,10 @@
             <button class="button operator" onclick="calculateResult()">=</button>
             <button class="button operator" onclick="setOperator('+')">+</button>
 
-            <button class="button operator" onclick="convertToFahrenheit()">G</button>
-            <button class="button operator" > </button>
-            <button class="button operator" > </button>
-            <button class="button operator" > </button>
+            <button class="button operator" onclick="convertToFahrenheit()">T</button>
+            <button class="button operator" onclick="convertGramsToKilograms()">P</button>
+            <button class="button operator" >PR</button>
+            <button class="button operator" >M</button>
 
         </div>
     </div>
@@ -129,6 +129,14 @@
             const celsius = parseFloat(currentInput);
             const fahrenheit = (celsius * 1.8) + 32;
             currentInput = fahrenheit.toString();
+            updateDisplay();
+        }
+
+        function convertGramsToKilograms() {
+            if (currentInput === '') return;
+            const grams = parseFloat(currentInput);
+            const kilograms = grams / 1000;
+            currentInput = kilograms.toString();
             updateDisplay();
         }
 
