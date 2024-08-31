@@ -74,7 +74,7 @@
             <button class="button operator" onclick="convertToFahrenheit()">T</button>
             <button class="button operator" onclick="convertGramsToKilograms()">P</button>
             <button class="button operator" onclick="convertBarToPSI()">PR</button>
-            <button class="button operator" >M</button>
+            <button class="button operator" onclick="convertPesosToUSD()">M</button>
 
         </div>
     </div>
@@ -145,6 +145,15 @@
             const bar = parseFloat(currentInput);
             const psi = bar * 14.5038;
             currentInput = psi.toString();
+            updateDisplay();
+        }
+
+        function convertPesosToUSD() {
+            if (currentInput === '') return;
+            const pesos = parseFloat(currentInput);
+            const exchangeRate = 4000; // Modifica esta tasa según sea necesario
+            const usd = pesos / exchangeRate;
+            currentInput = usd.toString();
             updateDisplay();
         }
 
