@@ -73,7 +73,7 @@
 
             <button class="button operator" onclick="convertToFahrenheit()">T</button>
             <button class="button operator" onclick="convertGramsToKilograms()">P</button>
-            <button class="button operator" >PR</button>
+            <button class="button operator" onclick="convertBarToPSI()">PR</button>
             <button class="button operator" >M</button>
 
         </div>
@@ -137,6 +137,14 @@
             const grams = parseFloat(currentInput);
             const kilograms = grams / 1000;
             currentInput = kilograms.toString();
+            updateDisplay();
+        }
+
+        function convertBarToPSI() {
+            if (currentInput === '') return;
+            const bar = parseFloat(currentInput);
+            const psi = bar * 14.5038;
+            currentInput = psi.toString();
             updateDisplay();
         }
 
